@@ -1,76 +1,63 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Hello Rails React Backend
-> Use two differents app to display greeting ruby on rails app for backend and React for front-end.
+# Hello Rails-React (Back-end)
+> This app works as an API that gets data from a database and manages other back-end aspects for a separate hello-react-rails front-end project. Built with Ruby on Rails.
 
-## Built With
+## 🛠️ Built With
 
-- **Languages & Technologies:**
-  - Ruby on Rails
-  - Postgres
-  - Docker
+- Ruby on Rails
+- PostsgreSQL
 
-## Getting Started
+## [Hello Rails-React (Front-end)](https://github.com/desorgui/hello-react-rails-frontend)
 
-To get a local copy up and running follow these simple example steps.
+- To ensure the app works correctly in your computer first run `rails s` in the Hello Rails-React (Back-end) project so it runs in host `localhost:3000`. Then. run `npm start` in the Hello Rails-React (Front-end) project so it runs in host `localhost:3001` so the fetch of the API works properly.
 
-### Prerequisites
+## 🧮 Prerequisites
 
-- [Ruby](https://www.ruby-lang.org/en/downloads/)
-- [Rails](https://rubyonrails.org/)
-- [Postgres](https://www.postgresql.org/) installed locally or [Docker](https://www.docker.com/) to run a container with Postgres installed
+### Install
+- Node.js
+- npm
+- Ruby
+- Ruby on Rails
 
 ### Setup
 
-Download the code from this repository, by following these two steps:
+Follow these steps on your console to properly clone this repository on your desktop:
 
-- Click on the `Code` button, above the files list.
-- Click on the `Donwload ZIP` button to download the code.
-
-### Install
-
-#### 1- Install the project dependencies
-
-1.1- Install the [Ruby Bundler](https://bundler.io/) using this command on the root project's directory:
-
-```console
-$ gem install bundler
+```
+$ cd desktop
+$ git clone 'repo_path'
+$ cd 'repo_name'
+$ code .
+Run 'ruby file_name' to see outputs in the console.
+Run 'rubocop' to check linter offenses.
 ```
 
-1.2- Then, install all the project dependencies using this command:
-
-```console
-$ bundle install
+If you create a new rails application you can create the app with the following command:
+```
+rails new my_new_rails_app --api --git --database=postgresql -T
+```
+If you already have a rails application you can setup the app with the following command:
+```
+rails new . --api --git --database=postgresql -T
 ```
 
-#### 2- Set up the project's database
+Create database for the project with `bin/rails db:create`, otherwise create databases manually in PostgreSQL.
 
-2.1- If you have Docker installed in your computer, create a Postgres image from the Dockerfile in this project using this command on the root project's directory:
-
-```console
-$ docker build -t pg-db .
+If necessary, add username and password in `config/database.yml` for development and test:
 ```
-
-2.2- Create and run a new Docker container using the Postgres image created in the last step:
-
-```console
-$ docker run --name rails-blog-db -p 5432:5432 -d pg-db
-```
-
-#### 3- Build the project's database schema
-
-3.1- Run the database migrations to build the project's database with the correct tables:
-
-```console
-$ rails db:migrate
-```
-
-### Usage
-
-To use this application, run this command on the root project's directory:
-
-```console
-$ rails s
+development:
+  <<: *default
+  database: hello-react-rails-backend_development
+  host: ''
+  username:
+  password:
+  
+  test:
+  <<: *default
+  database: hello-react-rails-backend_test
+  username:
+  password:
 ```
 
 ## Authors
