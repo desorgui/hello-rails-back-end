@@ -8,7 +8,7 @@
 - Ruby on Rails
 - PostsgreSQL
 
-## [Hello Rails-React (Front-end)](https://github.com/desorgui/hello-react-rails-frontend)
+## [Hello Rails-React (Front-end)](https://github.com/desorgui/hello-react-frontend)
 
 - To ensure the app works correctly in your computer first run `rails s` in the Hello Rails-React (Back-end) project so it runs in host `localhost:3000`. Then. run `npm start` in the Hello Rails-React (Front-end) project so it runs in host `localhost:3001` so the fetch of the API works properly.
 
